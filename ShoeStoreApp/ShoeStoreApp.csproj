@@ -137,6 +137,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Security.Cryptography.Pkcs, Version=8.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.Pkcs.8.0.1\lib\net462\System.Security.Cryptography.Pkcs.dll</HintPath>
@@ -185,6 +186,39 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Data\DatabaseHelper.cs" />
+    <Compile Include="Entitiys\OrderDetails.cs">
+      <DependentUpon>ShoeStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entitiys\Orders.cs">
+      <DependentUpon>ShoeStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entitiys\PickipPointed.cs">
+      <DependentUpon>ShoeStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entitiys\Products.cs">
+      <DependentUpon>ShoeStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entitiys\ShoeStoreModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShoeStoreModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entitiys\ShoeStoreModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShoeStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entitiys\ShoeStoreModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShoeStoreModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entitiys\sysdiagrams.cs">
+      <DependentUpon>ShoeStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entitiys\Users.cs">
+      <DependentUpon>ShoeStoreModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -216,6 +250,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Entitiys\ShoeStoreModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ShoeStoreModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entitiys\ShoeStoreModel.edmx.diagram">
+      <DependentUpon>ShoeStoreModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -256,6 +297,21 @@
     <Resource Include="Images\9.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entitiys\ShoeStoreModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ShoeStoreModel.edmx</DependentUpon>
+      <LastGenOutput>ShoeStoreModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entitiys\ShoeStoreModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ShoeStoreModel.edmx</DependentUpon>
+      <LastGenOutput>ShoeStoreModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
